@@ -14,10 +14,10 @@ const RootQuery = new GraphQLObjectType({
             args: {},
             resolve() {
                 return 'Hello World';
-            }
-        }
-    })
-})
+            },
+        },
+    }),
+});
 
 module.exports = new GraphQLSchema({
     query: RootQuery,
