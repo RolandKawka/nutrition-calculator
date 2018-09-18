@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+
+  # Service
+  nutrition-calculator:
+    container_name: service
+    build: ./
+    volumes:
+      - ./:/usr/src/nutrition-calculator
+    command: npm start
+    working_dir: /usr/src/nutrition-calculator
+    ports:
+      - "3000:3000"
