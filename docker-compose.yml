@@ -1,6 +1,19 @@
 version: '3.7'
 services:
 
+  # PostgreSQL
+  postgres:
+    container_name: postgres
+    build: ./db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_URL: postgres://user:password@localhost:5432/awesome-nutrition-calculator
+      POSTGRES_DB: awesome-nutrition-calculator
+      POSTGRES_HOST: postgres
+    ports:
+      - "5432:5432"
+
   # Service
   nutrition-calculator:
     container_name: service
@@ -11,3 +24,5 @@ services:
     working_dir: /usr/src/nutrition-calculator
     ports:
       - "3000:3000"
+    environment:
+      POSTGRES_URI: postgres://user:password@postgres:5432/awesome-nutrition-calculator

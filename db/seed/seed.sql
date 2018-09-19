@@ -1,0 +1,1 @@
+insert into hello (hello) values ('world');
