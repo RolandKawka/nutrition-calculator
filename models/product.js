@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, DataTypes) => {
     const Product = sequelize.define('Product', {
         name: DataTypes.STRING,
@@ -7,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         fat: DataTypes.INTEGER,
         calories: DataTypes.INTEGER,
     }, {});
-    Product.associate = function(models) {
+    Product.associate = (models) => {
         Product.hasMany(models.ProductImage, { onDelete: 'cascade' });
     };
     return Product;
