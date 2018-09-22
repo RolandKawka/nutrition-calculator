@@ -7,7 +7,9 @@
     "start": "nodemon server.js",
     "lint": "eslint --ext .js ./",
     "test": "mocha",
-    "psql": "docker exec -it postgres psql -U user awesome-nutrition-calculator"
+    "psql": "docker exec -it postgres psql -U user awesome-nutrition-calculator",
+    "db:migrate": "docker exec -it service node_modules/.bin/sequelize db:migrate",
+    "db:seed": "docker exec -it service node_modules/.bin/sequelize db:seed"
   },
   "eslintConfig": {
     "extends": "airbnb-base",
@@ -36,13 +38,15 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^14.0.2",
     "morgan": "^1.9.1",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.38.1"
+    "sequelize": "^4.38.1",
+    "sequelize-cli": "^4.1.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
