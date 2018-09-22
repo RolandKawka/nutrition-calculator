@@ -9,7 +9,7 @@
     "test": "mocha",
     "psql": "docker exec -it postgres psql -U user awesome-nutrition-calculator",
     "db:migrate": "docker exec -it service node_modules/.bin/sequelize db:migrate",
-    "db:seed": "docker exec -it service node_modules/.bin/sequelize db:seed"
+    "db:seed": "docker exec -it service node_modules/.bin/sequelize db:seed:all"
   },
   "eslintConfig": {
     "extends": "airbnb-base",
