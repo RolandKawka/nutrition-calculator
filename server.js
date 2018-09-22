@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const Sequelize = require('sequelize');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
+require('dotenv').config({ path: 'variables.env' });
 
 const app = express();
 
